@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+#map {
+  /* Define a altura do mapa para 50% da altura da viewport (vh) para 
+     ter uma dimensão fixa, ou 50% da altura do ion-content se houver restrições. */
+  width: 50%;
+  height: 50vh; /* 50% da altura da tela visível. Você pode usar '50%' se preferir 
+                   50% do <ion-content> */
+  background-color: lightgray;
+  
+  /* IMPORTANTE: Garante que o mapa não se sobreponha e siga o fluxo */
+  position: relative; 
+}
