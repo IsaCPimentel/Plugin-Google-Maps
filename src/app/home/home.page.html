@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Capacitor Maps
@@ -6,8 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-  <div #map id="map" class="map-container"></div>
-
+<ion-content>
+  <div class="container">
+    <capacitor-google-map #map></capacitor-google-map>
+  </div>
 </ion-content>

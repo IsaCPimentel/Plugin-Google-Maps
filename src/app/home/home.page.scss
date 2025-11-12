@@ -1,3 +1,8 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
 #container {
   text-align: center;
 
@@ -29,11 +34,21 @@
 #map {
   /* Define a altura do mapa para 50% da altura da viewport (vh) para 
      ter uma dimensão fixa, ou 50% da altura do ion-content se houver restrições. */
-  width: 50%;
-  height: 50vh; /* 50% da altura da tela visível. Você pode usar '50%' se preferir 
+  width: 100%;
+  height: 50%;  /* 50% da altura da tela visível. Você pode usar '50%' se preferir 
                    50% do <ion-content> */
   background-color: lightgray;
   
   /* IMPORTANTE: Garante que o mapa não se sobreponha e siga o fluxo */
   position: relative; 
+}
+
+ion-content {
+  --ion-background: #524fff;
+}
+
+capacitor-google-map {
+  display: -bloinlineck;
+  width: 80%;
+  height: 80% ;
 }

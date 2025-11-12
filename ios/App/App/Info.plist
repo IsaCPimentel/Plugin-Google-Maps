@@ -46,14 +46,12 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 
-	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 		<string>This app needs access to track you.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 		<string>This app needs access to your current position.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-		<string>This app wants to show your location</string>
-	
-
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>This app wants to show your location</string>	
 
 </dict>
 </plist>
