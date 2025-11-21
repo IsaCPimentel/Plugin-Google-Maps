@@ -3,6 +3,7 @@ import { GoogleMap, Marker } from '@capacitor/google-maps';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { environment } from 'src/environments/environment';
+import { EchoPlugin } from '@voacolibri/google-maps-plugin';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.createMap();
+ 
   }
 
   async createMap() {
@@ -64,7 +66,7 @@ export class HomePage {
     console.log(result);
 
     this.map.setOnMarkerClickListener(async(marker) => {
-      
+
       const modal = await this.modalCtrl.create({
         component: ModalPage,
         componentProps: {
@@ -74,6 +76,24 @@ export class HomePage {
         initialBreakpoint: 0.3,
       });
       await modal.present();
+
+      // Teste do plugin
+      try {
+        console.log('Tentando chamar o plugin Echo...');
+        await this.testMapPlugin();
+      } catch (error) {
+        // Se der erro (ex: estiver rodando na Web), vai cair aqui e não trava o app
+        console.error('Erro ao chamar o plugin Echo:', error);
+        alert('Erro no plugin (veja o console): ' + JSON.stringify(error));
+      }
     });
   }
+
+  async testMapPlugin() {
+   
+    const { value } = await EchoPlugin.echo({ value: 'Plugin Host/Módulo Nativo OK!' });
+    console.log('Resposta do nativo: ', value);
+    alert('Resposta do nativo: ' + value);
+  }
+
 }

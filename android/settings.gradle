@@ -2,4 +2,7 @@ include ':app'
 include ':capacitor-cordova-android-plugins'
 project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
 
+include ':google-maps-plugin'
+project(':google-maps-plugin').projectDir = new File('../node_modules/@voacolibri/google-maps-plugin/android')
+
 apply from: 'capacitor.settings.gradle'
